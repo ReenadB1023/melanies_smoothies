@@ -37,7 +37,7 @@ fruit_map = {
     "Blueberries": "Blueberry",
     "Strawberries": "Strawberry",
     "Raspberries": "Raspberry",
-    "Figs":"Figs"
+    "Figs":"Figs",
     "Dragon Fruit":"Dragon Fruit"
 }
 
