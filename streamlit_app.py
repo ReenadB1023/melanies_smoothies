@@ -36,6 +36,13 @@ ingredients_list = st.multiselect(
     fruit_options
     ,max_selections=5
 )
+fruit_map = {
+    "Apples": "Apple",
+    "Blueberries": "Blueberry"
+}
+
+for fruit_chosen in ingredients_list:
+    fruit_choice = fruit_map.get(fruit_chosen, fruit_chosen.rstrip('s'))
 
 # Display chosen ingredients
 if ingredients_list:
