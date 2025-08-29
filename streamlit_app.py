@@ -36,7 +36,8 @@ fruit_map = {
     "Apples": "Apple",
     "Blueberries": "Blueberry",
     "Strawberries": "Strawberry",
-    "Raspberries": "Raspberry"
+    "Raspberries": "Raspberry",
+    "Figs":"Figs"
 }
 
 # Show nutrition for each chosen fruit
