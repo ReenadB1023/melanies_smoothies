@@ -42,20 +42,26 @@ fruit_map = {
 
 for fruit_chosen in ingredients_list:
     fruit_choice = fruit_map.get(fruit_chosen, fruit_chosen.rstrip('s'))
-
+     st.subheader(fruit_chosen + ' Nutrition Information')
+    fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_choice.lower())
+    
+    if fruityvice_response.status_code == 200:
+        fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
+    else:
+        st.error(f"Sorry, {fruit_chosen} is not available in the API database.")
 # Display chosen ingredients
-if ingredients_list:
-    ingredients_string = ' '#.join(ingredients_list)
+#1111if ingredients_list:
+    #1111ingredients_string = ' '#.join(ingredients_list)
 
-    for fruit_chosen in ingredients_list:
-        ingredients_string += fruit_chosen + ''
+   #111 for fruit_chosen in ingredients_list:
+    # 111   ingredients_string += fruit_chosen + ''
 
-        search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+      #111  search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         #st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
         
-        st.subheader(fruit_chosen + 'Nutrition Information')
-        fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
-        fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
+      #11  st.subheader(fruit_chosen + 'Nutrition Information')
+        #11fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
+        #11fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
         #smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon" + fruit_chosen)
         #sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
