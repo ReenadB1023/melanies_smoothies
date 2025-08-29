@@ -42,7 +42,7 @@ fruit_map = {
 
 for fruit_chosen in ingredients_list:
     fruit_choice = fruit_map.get(fruit_chosen, fruit_chosen.rstrip('s'))
-     st.subheader(fruit_chosen + ' Nutrition Information')
+    st.subheader(fruit_chosen + ' Nutrition Information')
     fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_choice.lower())
     
     if fruityvice_response.status_code == 200:
