@@ -64,7 +64,7 @@ if ingredients_list:
     # Build SQL insert statement
     my_insert_stmt = f"""
         INSERT INTO smoothies.public.orders(ingredients, name_on_order)
-        VALUES ('{ingredients_string}', '{name_on_order}',FALSE)
+        VALUES ('{ingredients_string}', '{name_on_order}')
     """
 
     # Debugging display
