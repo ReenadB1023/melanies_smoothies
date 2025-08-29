@@ -65,11 +65,6 @@ for fruit_chosen in ingredients_list:
         #smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon" + fruit_chosen)
         #sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
-        cur.execute(
-    "INSERT INTO smoothies.public.orders (ingredients, name_on_order) VALUES (%s, %s)",
-    (ingredients_string, name_on_order)
-)
-
 
     # Build SQL insert statement
     my_insert_stmt = f"""
